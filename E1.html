@@ -1,0 +1,66 @@
+<!--E1 Smiley Face html file-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smiley Face</title>
+</head>
+<body>
+    <canvas id="Face" width="500" height="500" style="border: 1px solid rgb(146, 144, 144);">
+        This text is displayed if your browser does not support HTML5 canvas
+    </canvas>
+    
+    <script type="text/javascript">
+        canvas = document.getElementById('Face');
+        ctx = canvas.getContext('2d');
+        ctx.fillStyle = "rgb(158,229,127)";
+        ctx.fillRect(0,0,500,500);
+
+        circleX = canvas.width/2;
+        circleY = canvas.height/2;
+        ctx.beginPath();
+        ctx.arc(circleX, circleY, 200, 0, Math.PI*2, false);
+        ctx.stroke();
+        ctx.fillStyle = "yellow";
+        ctx.fill();
+
+        eyeLX = canvas.width/3;
+        eyeLY = canvas.height/5*2;
+        ctx.beginPath();
+        ctx.arc(eyeLX, eyeLY, 10, 0, Math.PI*2, false);
+        ctx.stroke();
+        ctx.fillStyle = "black";
+        ctx.fill();
+
+        eyeRX = canvas.width/3*2;
+        eyeRY = canvas.height/5*2;
+        ctx.beginPath();
+        ctx.arc(eyeRX, eyeRY, 10, 0, Math.PI*2, false);
+        ctx.stroke();
+        ctx.fillStyle = "black";
+        ctx.fill();
+
+        noseX = canvas.width/2;
+        noseY = canvas.height/2;
+        ctx.moveTo(noseX,noseY-20);
+        ctx.lineTo(noseX,noseY+20);
+        ctx.strokeStyle = 'black';
+        ctx.stroke();
+
+        mouseX = canvas.width/2;
+        mouseY = noseY+20;
+        ctx.beginPath();
+        ctx.arc(mouseX, mouseY, 80, Math.PI/6, Math.PI*5/6, false);
+        ctx.stroke();
+        ctx.strokeStyle = 'black';
+        ctx.stroke();
+
+        ctx.font = 'bold 24px Arial';
+        ctx.fillStyle = 'black';
+        ctx.textAlign = 'center';
+        ctx.fillText('The Canvas brought me to life!', circleX, canvas.height - 20);
+
+    </script>
+</body>
+</html>
